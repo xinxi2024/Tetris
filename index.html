@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯方块</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-area">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <div class="side-panel">
+                <div class="score">分数: <span id="score">0</span></div>
+                <div class="level">等级: <span id="level">1</span></div>
+                <div class="next-piece">
+                    <h3>下一个方块</h3>
+                    <canvas id="nextCanvas" width="100" height="100"></canvas>
+                </div>
+                <div class="controls">
+                    <button id="startBtn">开始游戏</button>
+                    <button id="pauseBtn">暂停</button>
+                    <button id="settingsBtn">设置</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <h2>游戏设置</h2>
+                <div class="settings-group">
+                    <h3>背景设置</h3>
+                    <input type="color" id="bgColor" value="#000000">
+                    <input type="file" id="bgImage" accept="image/*">
+                </div>
+                <div class="settings-group">
+                    <h3>方块设置</h3>
+                    <input type="color" id="blockColor" value="#00ff00">
+                </div>
+                <div class="settings-group">
+                    <h3>游戏速度</h3>
+                    <input type="range" id="speed" min="0" max="1000" value="500">
+                </div>
+                <div class="settings-group">
+                    <h3>音效设置</h3>
+                    <label>
+                        <input type="checkbox" id="bgMusic" checked>
+                        背景音乐
+                    </label>
+                    <label>
+                        <input type="checkbox" id="soundEffects" checked>
+                        音效
+                    </label>
+                </div>
+                <button id="saveSettings">保存设置</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端控制按钮 -->
+    <div class="mobile-controls">
+        <div class="mobile-controls-row">
+            <button id="rotateBtn">旋转</button>
+        </div>
+        <div class="mobile-controls-row">
+            <button id="leftBtn">←</button>
+            <button id="downBtn">↓</button>
+            <button id="rightBtn">→</button>
+        </div>
+        <div class="mobile-controls-row">
+            <button id="dropBtn">快速下落</button>
+        </div>
+    </div>
+
+    <script src="js/settings.js"></script>
+    <script src="js/tetromino.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
